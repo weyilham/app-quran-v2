@@ -6,8 +6,6 @@ import { SuratType } from "./Content";
 import { useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-// import Modal from "../ui/Modal";
-
 type PropsType = {
   surat: SuratType | undefined;
   qary: string;
@@ -64,15 +62,7 @@ function CardSurat({ surat, qary }: PropsType) {
     }
   };
 
-  // const getTafsir = async () => {
-  //   const { data } = await axios.get(
-  //     "https://equran.id/api/v2/tafsir/" + surat?.nomor
-  //   );
-  //   setTafsir(data.data);
-  //   console.log(tafsir);
-  // };
-
-  // getTafsir();
+  console.log(surat);
 
   return (
     <div
@@ -116,11 +106,6 @@ function CardSurat({ surat, qary }: PropsType) {
                   >
                     {isPlayingCurrentAyat ? <LuPause /> : <Play />}
                   </Button>
-                  {/* <Button className="bg-purple-500 hover:bg-purple-700 rounded-full h-11 w-11">
-                    <LuBookmark />
-                  </Button> */}
-
-                  {/* <Modal /> */}
                 </div>
               </div>
             </div>
@@ -128,7 +113,7 @@ function CardSurat({ surat, qary }: PropsType) {
         })}
 
       {/* Elemen audio yang di-control dengan ref */}
-      <audio ref={audioRef} onClick={handleAudioEnded} />
+      <audio ref={audioRef} onEnded={handleAudioEnded} />
     </div>
   );
 }
