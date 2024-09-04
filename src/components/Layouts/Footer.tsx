@@ -1,5 +1,3 @@
-import React from "react";
-
 function Footer() {
   return (
     <div className="w-full fixed bottom-0 left-0 right-0 shadow-sm z-50">
